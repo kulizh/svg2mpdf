@@ -1,5 +1,5 @@
 <?php
-namespace Svg2Mpdf\Utils;
+namespace Svg4Mpdf\Utils;
 
 class File
 {

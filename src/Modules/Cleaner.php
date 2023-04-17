@@ -1,7 +1,7 @@
 <?php
-namespace Svg2Mpdf\Modules;
+namespace Svg4Mpdf\Modules;
 
-use Svg2Mpdf\Utils\RegExpBuilder;
+use Svg4Mpdf\Utils\RegExpBuilder;
 
 class Cleaner
 {

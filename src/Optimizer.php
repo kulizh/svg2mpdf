@@ -1,9 +1,9 @@
 <?php
-namespace Svg2Mpdf;
+namespace Svg4Mpdf;
 
-use Svg2Mpdf\Utils\File;
-use Svg2Mpdf\Modules\Eraser;
-use Svg2Mpdf\Modules\Cleaner;
+use Svg4Mpdf\Utils\File;
+use Svg4Mpdf\Modules\Eraser;
+use Svg4Mpdf\Modules\Cleaner;
 
 final class Optimizer
 {
@@ -17,21 +17,21 @@ final class Optimizer
         $this->contents = $this->file->read();
     }
 
-    public function setContents(string $contents): Svg2Mpdf
+    public function setContents(string $contents): Svg4Mpdf
     {
         $this->contents = $contents;
 
         return $this;
     }
 
-    public function eraseComments(): Svg2Mpdf
+    public function eraseComments(): Svg4Mpdf
     {
         Eraser::comments($this->contents);
         
         return $this;
     }
 
-    public function cleanUp(): Svg2Mpdf
+    public function cleanUp(): Svg4Mpdf
     {
         $cleaner = new Cleaner();
         $this->contents = $cleaner->do($this->contents);
@@ -39,7 +39,7 @@ final class Optimizer
         return $this;
     }
 
-    public function replace(string $what, string $with): Svg2Mpdf
+    public function replace(string $what, string $with): Svg4Mpdf
     {
         $this->contents = str_replace($what, $with, $this->contents);
     }
